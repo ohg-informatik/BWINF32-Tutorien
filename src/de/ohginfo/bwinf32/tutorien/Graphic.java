@@ -89,9 +89,7 @@ public class Graphic extends JFrame {
 	        );
 	}
 	
-
 	public boolean[][] getDates() {
 		return dates;
 	}
-	
 }
