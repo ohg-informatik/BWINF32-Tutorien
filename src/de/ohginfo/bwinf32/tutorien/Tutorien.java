@@ -1,6 +1,9 @@
-package de.ohginfo.bwinf32.tutorien;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
+import java.util.Arrays;
 
 public class Tutorien {
     private Graphic graphic = new Graphic();
