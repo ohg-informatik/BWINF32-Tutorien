@@ -1,7 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Tutorien {
     private Graphic graphic = new Graphic();
@@ -42,9 +41,26 @@ public class Tutorien {
         
         count = sort(count);
         
+        ArrayList<Integer> independentHustin = new ArrayList<Integer>();
         for(int i=0;i<6;i++){
-            System.out.println(count[i][0]+"; "+count[i][1]);
+            if(count[i][0] != 0){
+              independentHustin.add(count[i][1]);
+            }
         }
+       if(independentHustin.size() > 4){
+         int[] solution = new int[5];
+         if(independentHustin.size()==5){
+           for(int i=0;i<5;i++){
+             solution[i] = independentHustin.get(i);
+           }
+         }else{
+           System.out.println("null");
+         }
+         PossibleSolution pssble = new PossibleSolution(dates, solution);
+         System.out.println(pssble.testPossibility());
+       }else{
+         System.out.println("Keine Terminvorschläge möglich!(Zu Wenige Termine ausgewählt)");
+       }
     }
     
     public int[][] sort(int[][] array){
