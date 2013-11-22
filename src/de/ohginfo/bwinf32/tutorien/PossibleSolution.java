@@ -1,3 +1,5 @@
+package de.ohginfo.bwinf32.tutorien;
+
 public class PossibleSolution {
   int[] termine;
   boolean[][] dates;

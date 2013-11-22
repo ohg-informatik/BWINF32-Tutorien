@@ -1,3 +1,5 @@
+package de.ohginfo.bwinf32.tutorien;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -15,7 +17,7 @@ import javax.swing.SwingConstants;
 public class Graphic extends JFrame {
   private static final long serialVersionUID = 1L;
   public JButton generate = new JButton("Generieren");
-  public JButton reset = new JButton("ZurÃ¼cksetzen");
+  public JButton reset = new JButton("Zurücksetzen");
   private JPanel panel = new JPanel();
   private JPanel buttonPanel = new JPanel();
   
