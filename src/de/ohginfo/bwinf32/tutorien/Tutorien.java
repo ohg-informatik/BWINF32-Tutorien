@@ -46,22 +46,42 @@ public class Tutorien {
         ArrayList<Integer> independentHustin = new ArrayList<Integer>();
         for(int i=0;i<6;i++){
             if(count[i][0] != 0){
-              independentHustin.add(count[i][1]);
+            	independentHustin.add(count[i][1]);
             }
         }
-		if (independentHustin.size() > 4) {
-			int[] solution = new int[5];
-			if (independentHustin.size() == 5) {
-				for (int i = 0; i < 5; i++) {
-					solution[i] = independentHustin.get(i);
-				}
-			} else {
-				System.out.println("null");
-			}
-			PossibleSolution pssble = new PossibleSolution(dates, solution);
-			System.out.println(pssble.testPossibility());
-		} else{
-         System.out.println("Keine Terminvorschläge möglich!(Zu Wenige Termine ausgewählt)");
+       if(independentHustin.size() > 4){
+    	   ArrayList<Integer> solution = new ArrayList<Integer>();
+    	   int start;
+    	   if(independentHustin.size() == 5){
+    		   start = 5;
+    	   }else{
+    		   start = 0;
+    	   }
+    	   for(int i=start;i<6;i++){
+    		   if(independentHustin.size()>5){
+    			   for(int j=0;j<6;j++){
+    				   if(j!=i){
+    					   solution.add(j);
+    				   }
+    			   }
+    		   }else{
+    			   for(int j=0;j<5;j++){
+    				   solution.add(j);
+    			   }
+    		   }
+    		   PossibleSolution pssble = new PossibleSolution(dates, solution);
+    		   if(pssble.testPossibility()){
+    			   System.out.println();
+    			   for(int j=0;j<solution.size();j++){
+    				   System.out.println("Termin " + (solution.get(j)+1));
+    			   }
+    			   break;
+    		   }else{
+    			   System.out.println("non");
+    		   }
+    	   }
+       }else{
+    	   System.out.println("Keine Terminvorschläge möglich!(Zu Wenige Termine ausgewählt)");
        }
     }
     
