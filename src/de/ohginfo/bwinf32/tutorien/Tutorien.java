@@ -49,41 +49,41 @@ public class Tutorien {
             	independentHustin.add(count[i][1]);
             }
         }
-       if(independentHustin.size() > 4){
-    	   ArrayList<Integer> solution = new ArrayList<Integer>();
-    	   int start;
-    	   if(independentHustin.size() == 5){
-    		   start = 5;
-    	   }else{
-    		   start = 0;
-    	   }
-    	   for(int i=start;i<6;i++){
-    		   if(independentHustin.size()>5){
-    			   for(int j=0;j<6;j++){
-    				   if(j!=i){
-    					   solution.add(j);
-    				   }
-    			   }
-    		   }else{
-    			   for(int j=0;j<5;j++){
+        if(independentHustin.size() > 4){
+        	ArrayList<Integer> solution;
+        	int start;
+        	if(independentHustin.size() == 5){
+        		start = 5;
+        	}else{
+        		start = 0;
+        	}
+        	for(int i=start;i<6;i++){
+        		solution = new ArrayList<Integer>();
+        		if(independentHustin.size()>5){
+        			for(int j=0;j<6;j++){
+        				if(j!=i){
+        					solution.add(j);
+        				}	
+        			}	
+        		}else{	
+    			   	for(int j=0;j<5;j++){
     				   solution.add(j);
-    			   }
-    		   }
-    		   PossibleSolution pssble = new PossibleSolution(dates, solution);
-    		   if(pssble.testPossibility()){
-    			   System.out.println();
-    			   for(int j=0;j<solution.size();j++){
-    				   System.out.println("Termin " + (solution.get(j)+1));
-    			   }
-    			   break;
-    		   }else{
-    			   System.out.println("non");
-    		   }
-    	   }
-       }else{
-    	   System.out.println("Keine Terminvorschläge möglich!(Zu Wenige Termine ausgewählt)");
-       }
-    }
+    			   	}
+        		}
+        		PossibleSolution pssble = new PossibleSolution(dates, solution);
+        		if(pssble.testPossibility()){
+        			System.out.println("==============================");
+        			for(int j=0;j<solution.size();j++){
+        				System.out.println("Termin " + (solution.get(j)+1));
+        			}
+        			System.out.println();
+        			break;
+        		}
+        	}
+        }else{
+        	System.out.println("Keine Terminvorschläge möglich!(Zu Wenige Termine ausgewählt)");
+        }
+   }
     
     public int[][] sort(int[][] array){
         int[] temp;
