@@ -14,10 +14,10 @@ public class PossibleSolution {
 	public boolean testPossibility(){
 		for(int i=0;i<termine.size();i++){
 			int count = 0;
-			for(int j=0;j<dates.length;j++){
-				for(int k=0;k<termine.size();k++){
-					if(j!=i){
-						if(dates[termine.get(k)][j]){
+			for(int j=0;j<termine.size();j++){
+				for(int k=0;k<dates.length;k++){
+					if(k!=i){
+						if(dates[termine.get(j)][k]){
 							count++;
 							break;
 						}
