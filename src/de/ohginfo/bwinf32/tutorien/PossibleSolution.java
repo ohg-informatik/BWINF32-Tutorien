@@ -2,6 +2,10 @@ package de.ohginfo.bwinf32.tutorien;
 
 import java.util.ArrayList;
 
+/**
+ * @author Daniel Struck
+ *
+ */
 public class PossibleSolution {
 	ArrayList<Integer> termine;
 	boolean[][] dates;

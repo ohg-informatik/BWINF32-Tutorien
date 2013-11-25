@@ -15,6 +15,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+/**
+ * @author Daniel Struck
+ *
+ */
 public class Graphic extends JFrame {
 	private static final long serialVersionUID = 1L;
 	public JButton generate = new JButton("Generieren");
@@ -30,7 +34,7 @@ public class Graphic extends JFrame {
 	private boolean[][] dates = new boolean[6][6];
 	
 	public Graphic(){
-		super("Tutorien");
+		super("Tutorien (Team 0x10)");
 		this.setVisible(true);
 		this.setSize(1000,500);
 		this.setResizable(false);

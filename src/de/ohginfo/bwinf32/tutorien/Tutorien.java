@@ -4,6 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * @author Daniel Struck
+ *
+ */
 public class Tutorien {
     private Graphic graphic = new Graphic();
     
