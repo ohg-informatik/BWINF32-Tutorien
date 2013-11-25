@@ -43,23 +43,24 @@ public class Tutorien {
         
         count = sort(count);
         
-        ArrayList<Integer> independentHustin = new ArrayList<Integer>();
+        ArrayList<Integer> filtered = new ArrayList<Integer>();
         for(int i=0;i<6;i++){
             if(count[i][0] != 0){
-            	independentHustin.add(count[i][1]);
+            	filtered.add(count[i][1]);
             }
         }
-        if(independentHustin.size() > 4){
+        if(filtered.size() > 4){
         	ArrayList<Integer> solution;
+        	ArrayList<Integer> solved = null;
         	int start;
-        	if(independentHustin.size() == 5){
+        	if(filtered.size() == 5){
         		start = 5;
         	}else{
         		start = 0;
         	}
         	for(int i=start;i<6;i++){
         		solution = new ArrayList<Integer>();
-        		if(independentHustin.size()>5){
+        		if(filtered.size()>5){
         			for(int j=0;j<6;j++){
         				if(j!=i){
         					solution.add(j);
@@ -72,16 +73,21 @@ public class Tutorien {
         		}
         		PossibleSolution pssble = new PossibleSolution(dates, solution);
         		if(pssble.testPossibility()){
-        			System.out.println("==============================");
-        			for(int j=0;j<solution.size();j++){
-        				System.out.println("Termin " + (solution.get(j)+1));
-        			}
-        			System.out.println();
+        			solved = solution;
         			break;
         		}
         	}
+        	if(solved == null){
+        		graphic.out("Keine Terminvorschläge möglich!(Zu wenige Tutoren)");
+        	}else{
+        		String text = "Termine: ";
+        		for(int i=0;i<5;i++){
+        			text += (solved.get(i)+1)+"; ";
+        		}
+        		graphic.out(text);
+        	}
         }else{
-        	System.out.println("Keine Terminvorschläge möglich!(Zu Wenige Termine ausgewählt)");
+        	graphic.out("Keine Terminvorschläge möglich!(Zu wenige Termine ausgewählt)");
         }
    }
     
@@ -103,3 +109,4 @@ public class Tutorien {
         new Tutorien();
     }
 }
+
